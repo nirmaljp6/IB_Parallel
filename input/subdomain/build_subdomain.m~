@@ -1,0 +1,19 @@
+clc; clear all
+
+offsetx = 0.5; offsety = 1.5;
+len = 3; m = 860; n = 860;
+
+delta = len/m; d2 = delta/2;
+xu = -offsetx:delta:-offsetx + len;
+yu = -offsety + d2:delta:-offsety + len*n/m - d2;
+
+xv = -offsetx + d2:delta:-offsetx + len - d2;
+yv = -offsety:delta:-offsety + len*n/m;
+
+[Xu, Yu] = meshgrid(xu, yu);
+[Xv, Yv] = meshgrid(xv, yv);
+
+xi = 0.28; xe = 0.7;
+yi = 0.225; ye = 0.1;
+
+sd_xu = Xu(find(abs()))
